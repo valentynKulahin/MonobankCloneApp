@@ -22,13 +22,19 @@ dependencyResolutionManagement {
 
 rootProject.name = "MonobankCloneApp"
 include(":app")
+
 include(":core:data")
-include(":feature:homescreen")
 include(":core:database")
 include(":core:datastore")
 include(":core:common")
 include(":core:designsystem")
 include(":core:datastore-proto")
 include(":core:domain")
-include(":core:model")
 include(":core:network")
+
+include(":ui:dashboard")
+include(":ui:credits")
+include(":ui:savings")
+include(":ui:cashback")
+include(":ui:more")
+include(":core:model")

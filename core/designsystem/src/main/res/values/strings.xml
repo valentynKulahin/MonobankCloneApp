@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="card">Dashboard</string>
+    <string name="credits">Credits</string>
+    <string name="savings">Savings</string>
+    <string name="cashback">Cashback</string>
+    <string name="more">More</string>
+    <string name="not_connected">⚠️ You aren’t connected to the internet</string>
+</resources>

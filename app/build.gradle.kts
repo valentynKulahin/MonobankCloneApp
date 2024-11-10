@@ -1,5 +1,4 @@
 import com.example.convention.monobankcloneapp.AppBuildType
-import org.gradle.kotlin.dsl.hilt
 
 plugins {
     alias(libs.plugins.monobankcloneapp.android.application)
@@ -45,14 +44,14 @@ dependencies {
     implementation(project(":core:datastore-proto"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
-    implementation(project(":core:model"))
     implementation(project(":core:network"))
+    implementation(project(":core:model"))
 
-    implementation(project(":feature:homescreen"))
-//    implementation(project(":feature:food"))
-//    implementation(project(":feature:recipe"))
-//    implementation(project(":feature:saved"))
-//    implementation(project(":feature:settings"))
+    implementation(project(":ui:dashboard"))
+    implementation(project(":ui:savings"))
+    implementation(project(":ui:credits"))
+    implementation(project(":ui:more"))
+    implementation(project(":ui:cashback"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3.adaptive)

@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.monobankcloneapp.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.monobankcloneapp.hilt)
 }
 
 android {
