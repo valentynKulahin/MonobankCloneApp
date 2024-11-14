@@ -9,8 +9,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable data object CreditsRoute
 
-fun NavController.navigateToCredits(navOptions: NavOptions? = null) =
-    navigate(route = CreditsRoute, navOptions = navOptions)
+fun NavController.navigateToCredits(navOptions: NavOptions) =
+    navigate(route = CreditsRoute, navOptions)
 
 fun NavGraphBuilder.creditsScreen(
     onShowSnackbar: suspend (String, String?) -> Boolean

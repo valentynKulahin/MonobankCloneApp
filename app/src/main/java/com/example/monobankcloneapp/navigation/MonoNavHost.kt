@@ -20,7 +20,7 @@ fun MonoNavHost(
     NavHost(
         navController = monoAppState.navController,
         startDestination = DashboardRoute,
-        modifier = modifier
+        modifier = modifier,
     ) {
         dashboardScreen(onShowSnackbar = onShowSnackbar)
         creditsScreen(onShowSnackbar = onShowSnackbar)

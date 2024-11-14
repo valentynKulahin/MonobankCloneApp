@@ -12,17 +12,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.example.cashback.navigation.CashbackRoute
 import com.example.cashback.navigation.navigateToCashback
-import com.example.credits.navigation.CreditsRoute
 import com.example.credits.navigation.navigateToCredits
-import com.example.dashboard.navigation.DashboardRoute
 import com.example.dashboard.navigation.navigateToDashboard
 import com.example.data.network.NetworkMonitor
 import com.example.monobankcloneapp.navigation.TopLevelDestination
-import com.example.more.navigation.MoreRoute
 import com.example.more.navigation.navigateToMore
-import com.example.savings.navigation.SavingsRoute
 import com.example.savings.navigation.navigateToSavings
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -75,8 +70,8 @@ class MonoAppState(
     val topLevelDestination: List<TopLevelDestination> = TopLevelDestination.entries
 
     fun navigateToTopLevelDestination(topLevelDestination: TopLevelDestination) {
-        val topLevelDestination = navOptions {
-            popUpTo(route = navController.graph.findStartDestination().id) {
+        val topLevelNavOptions = navOptions {
+            popUpTo(navController.graph.findStartDestination().id) {
                 saveState = true
             }
 
@@ -85,11 +80,11 @@ class MonoAppState(
         }
 
         when (topLevelDestination) {
-            DashboardRoute -> navController.navigateToDashboard(topLevelDestination)
-            CreditsRoute -> navController.navigateToCredits(topLevelDestination)
-            SavingsRoute -> navController.navigateToSavings(topLevelDestination)
-            CashbackRoute -> navController.navigateToCashback(topLevelDestination)
-            MoreRoute -> navController.navigateToMore(topLevelDestination)
+            TopLevelDestination.Dashboard -> navController.navigateToDashboard(topLevelNavOptions)
+            TopLevelDestination.Credits -> navController.navigateToCredits(topLevelNavOptions)
+            TopLevelDestination.Savings -> navController.navigateToSavings(topLevelNavOptions)
+            TopLevelDestination.Cashback -> navController.navigateToCashback(topLevelNavOptions)
+            TopLevelDestination.More -> navController.navigateToMore(topLevelNavOptions)
         }
 
     }
