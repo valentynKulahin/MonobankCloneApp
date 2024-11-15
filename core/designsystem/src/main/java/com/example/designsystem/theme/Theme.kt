@@ -8,6 +8,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
 
@@ -33,12 +34,12 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
-@androidx.compose.runtime.Composable
+@Composable
 fun MonobankCloneAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
-    content: @androidx.compose.runtime.Composable () -> Unit
+    content: @Composable () -> Unit
 ) {
     val colorScheme = when {
         dynamicColor && supportsDynamicTheming() -> {
@@ -47,6 +48,7 @@ fun MonobankCloneAppTheme(
                 context
             )
         }
+
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }

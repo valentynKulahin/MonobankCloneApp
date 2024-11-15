@@ -1,19 +1,55 @@
 package com.example.dashboard
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.TileMode
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.designsystem.component.MonoBackground
+import com.example.designsystem.theme.gradientDashboardBottom
+import com.example.designsystem.theme.gradientDashboardTop
 
 @Composable
-fun DashboardScreen(
+internal fun DashboardScreen(
     dashboardVM: DashboardScreenViewModel = hiltViewModel(),
     onShowSnackbar: suspend (String, String?) -> Boolean
 ) {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+    MonoBackground {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(brush = horizontalDashboardGradient())
+        ) {
+            DashboardScreen_Top()
+        }
+    }
+}
+
+@Composable
+private fun DashboardScreen_Top(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
         Text(text = "Welcome to Dashboard")
     }
+}
+
+private fun horizontalDashboardGradient(): Brush {
+    return Brush.horizontalGradient(
+        colors = listOf(
+            gradientDashboardTop,
+            gradientDashboardBottom
+        ),
+        startX = 0F,
+        endX = 1000F,
+        tileMode = TileMode.Clamp
+    )
 }

@@ -45,13 +45,14 @@ dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
     implementation(project(":core:network"))
-    implementation(project(":core:model"))
 
     implementation(project(":ui:dashboard"))
     implementation(project(":ui:savings"))
     implementation(project(":ui:credits"))
     implementation(project(":ui:more"))
     implementation(project(":ui:cashback"))
+
+    implementation(project(":feature:auth"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3.adaptive)
