@@ -23,7 +23,7 @@ import com.example.models.user.AppTheme
 import com.example.monobankcloneapp.ui.MonoApp
 import com.example.monobankcloneapp.ui.rememberMonoAppState
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -48,18 +48,21 @@ class MainActivity : ComponentActivity() {
         // Update the uiState
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                uiState = MainActivityUiState.Loading
                 mainVM.uiState
-                    .onEach { uiState = it }
-                    .collect()
+                    .onEach {
+                        delay(1000L)
+                        uiState = it
+                    }
             }
         }
 
-        splashScreen.setKeepOnScreenCondition {
-            when (uiState) {
-                is MainActivityUiState.Loading -> true
-                is MainActivityUiState.Success -> false
-            }
-        }
+//        splashScreen.setKeepOnScreenCondition {
+//            when (uiState) {
+//                is MainActivityUiState.Loading -> true
+//                is MainActivityUiState.Success -> false
+//            }
+//        }
 
         enableEdgeToEdge()
         setContent {

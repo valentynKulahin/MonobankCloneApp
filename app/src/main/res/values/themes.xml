@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.MonobankCloneApp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.MonobankCloneApp.Dark" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_image</item>
+    </style>
+
 </resources>

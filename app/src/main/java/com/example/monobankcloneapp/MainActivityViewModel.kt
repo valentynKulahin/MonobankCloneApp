@@ -13,12 +13,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    private val getAccountSettingsUseCase: GetAccountSettingsUseCase
+    getAccountSettingsUseCase: GetAccountSettingsUseCase
 ) : ViewModel() {
 
     val uiState: StateFlow<MainActivityUiState> =
         getAccountSettingsUseCase()
-            .map { MainActivityUiState.Success(it) }
+            .map {
+                MainActivityUiState.Success(it)
+            }
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),

@@ -4,6 +4,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarDuration.Indefinite
@@ -47,7 +48,7 @@ fun MonoApp(
         }
 
         MonoAppScreen(
-            modifier = modifier,
+            modifier = modifier.systemBarsPadding(),
             monoAppState = monoAppState,
             snackbarHostState = snackbarHostState
         )
@@ -64,6 +65,7 @@ fun MonoAppScreen(
 
     MonoScaffold(
         modifier = modifier,
+        snackbarHostState = { SnackbarHostState() },
         bottomBar = {
             MonoNavigationBar {
                 val currentTopLevelDestination = monoAppState.currentTopLevelDestination
