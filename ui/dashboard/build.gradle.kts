@@ -13,6 +13,11 @@ android {
 dependencies {
 
     implementation(project(":core:designsystem"))
+    implementation(project(":core:models"))
+    implementation(project(":core:common"))
+
+    implementation(project(":feature:accountInfo"))
+    implementation(project(":feature:accountsettings"))
 
     implementation(libs.androidx.core.ktx)
 

@@ -2,6 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="MonobankCloneApp.core.model" target="21" />
+      <module name="MonobankCloneApp.models.account" target="11" />
+      <module name="MonobankCloneApp.models.account.main" target="11" />
+      <module name="MonobankCloneApp.models.account.test" target="11" />
+      <module name="MonobankCloneApp.models.card" target="11" />
+      <module name="MonobankCloneApp.models.card.main" target="11" />
+      <module name="MonobankCloneApp.models.card.test" target="11" />
+      <module name="MonobankCloneApp.models.user" target="11" />
+      <module name="MonobankCloneApp.models.user.main" target="11" />
+      <module name="MonobankCloneApp.models.user.test" target="11" />
       <module name="MonobankCloneApp.screens.dashboard" target="21" />
     </bytecodeTargetLevel>
   </component>

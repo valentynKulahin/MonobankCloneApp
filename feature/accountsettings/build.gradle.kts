@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.expensemoney"
+    namespace = "com.example.accountsettings"
 }
 
 dependencies {

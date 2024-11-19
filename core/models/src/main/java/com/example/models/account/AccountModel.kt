@@ -10,6 +10,7 @@ data class AccountModel(
     val accountType: AccountType,
     val balance: Double,
     val currency: Int,
+    val creditLimit: Double,
     val createdAt: Long,
     val updatedAt: Long
 )

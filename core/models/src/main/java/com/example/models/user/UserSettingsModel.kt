@@ -23,5 +23,5 @@ data class SecuritySettings(
     val biometricAuthEnabled: Boolean,
     val twoFactorAuthEnabled: Boolean,
     val autoLockTimeout: Int,
-    val screenObfuscation: Boolean
+    val useSecureFlag: Boolean
 )

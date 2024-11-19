@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":core:datastore-proto"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:domain"))
+    implementation(project(":core:models"))
     implementation(project(":core:network"))
 
     implementation(project(":ui:dashboard"))
@@ -52,7 +53,12 @@ dependencies {
     implementation(project(":ui:more"))
     implementation(project(":ui:cashback"))
 
+    implementation(project(":feature:accountInfo"))
+    implementation(project(":feature:accountsettings"))
     implementation(project(":feature:auth"))
+    implementation(project(":feature:expensemoney"))
+    implementation(project(":feature:depositmoney"))
+    implementation(project(":feature:transfermoney"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3.adaptive)
